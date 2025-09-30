@@ -1,0 +1,39 @@
+<% layout('layouts/boilerplate') %> 
+ 
+<div class="text-center">
+    <h1> <%= hotel.name %> </h1>
+    <h2> <%= hotel.location %>,<%= hotel.country %></h2>
+    <img width="600px" height="400px" src="https://images.unsplash.com/photo-1620244919980-2e2cbb6fe728?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80">
+    <p class="lead">Hotel type:<%= hotel.type %></p>
+    <p class="lead"><%= hotel.description %></p>
+    <a href="<%= hotel.website %>"><%= hotel.website %></a> 
+    <p>Experiences: <%= hotel.experiences %></p>
+    <a href="/hotels/<%= hotel._id %>/edit">Edit</a> 
+    <a href="/hotels/<%= hotel._id %>/delete">Delete</a> 
+    <a href="/hotels/">Back to hotels</a> 
+
+    <div id="map" style='width:400px; height:300px; margin-top: 50px;'></div>
+</div>
+
+<script>
+const hotel = '<%- JSON.stringify(hotel) %>';
+function initMap() {
+    //map.setCenter(hotel.geometry.coordinates);
+    
+    const lat = parseFloat('<%- hotel.geometry.coordinates[0] %>');
+    const lng = parseFloat('<%- hotel.geometry.coordinates[1] %>');
+    const latLng = { lat: lat, lng: lng };
+    
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 8,
+      center: latLng,
+      
+    });
+    
+    new google.maps.Marker({
+        map: map,
+        position: latLng,
+      });
+    
+}
+</script>

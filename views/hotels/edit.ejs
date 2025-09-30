@@ -1,0 +1,42 @@
+<% layout('layouts/boilerplate') %> 
+
+<div class="row">
+    <h1 class="text-center">Edit Hotel</h1>
+    <div class="col-6 offset-3" >
+        <form class="needs-validation" action="/hotels/<%=hotel._id%>?_method=PUT" method="POST" novalidate>
+            <div class="mb-3">
+                <label for="name" class="form-label" >Name:</label>
+                <input type="text" class="form-control" id="name" name="hotel[name]" value="<%= hotel.name %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location:</label>
+                <input type="text" class="form-control" id="location" name="hotel[location]" value="<%= hotel.location %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country:</label>
+                <input type="text" class="form-control" id="country" name="hotel[country]" value="<%= hotel.country %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Type:</label>
+                <input type="text" class="form-control" id="type" name="hotel[type]" value="<%= hotel.type %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="website" class="form-label">Website:</label>
+                <input type="text" class="form-control" id="website" name="hotel[website]" value="<%= hotel.website %>">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <input type="text" class="form-control" id="description" name="hotel[description]" value="<%= hotel.description %>">
+            </div>
+            <div class="mb-3">
+                <label for="activities" class="form-label">Activities:</label>
+                <textarea type="text" class="form-control" id="activities" name="hotel[activities]"></textarea value="<%= hotel.experiences %>">
+            </div>
+            <div class="mb-3"> 
+                <button class="btn btn-success">Update Hotel</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
+

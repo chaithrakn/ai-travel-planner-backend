@@ -1,0 +1,45 @@
+<% layout('layouts/boilerplate') %> 
+
+<div class="row">
+    <h1 class="text-center">Add New Hotel</h1>
+    <div class="col-6 offset-3" >
+        <form class="needs-validation" action="/hotels" method="POST" novalidate>
+            <div class="mb-3">
+                <label for="name" class="form-label" >Name:</label>
+                <input type="text" class="form-control" id="name" name="hotel[name]" required>
+                <div class="valid-feedback">
+                    Looks good!
+                  </div>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location:</label>
+                <input type="text" class="form-control" id="location" name="hotel[location]" required>
+            </div>
+            <div class="mb-3">
+                <label for="country" class="form-label">Country:</label>
+                <input type="text" class="form-control" id="country" name="hotel[country]" required>
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Type:</label>
+                <input type="text" class="form-control" id="type" name="hotel[type]" required>
+            </div>
+            <div class="mb-3">
+                <label for="website" class="form-label">Website:</label>
+                <input type="text" class="form-control" id="website" name="hotel[website]">
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <input type="text" class="form-control" id="description" name="hotel[description]">
+            </div>
+            <div class="mb-3">
+                <label for="activities" class="form-label">Experiences:</label>
+                <textarea type="text" class="form-control" id="activities" name="hotel[experiences]"></textarea>
+            </div>
+            <div class="mb-3"> 
+                <button class="btn btn-success">Add Hotel</button>
+            </div>
+            
+        </form>
+    </div>
+</div>
+
